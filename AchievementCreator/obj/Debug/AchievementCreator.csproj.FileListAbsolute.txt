@@ -9,3 +9,14 @@ C:\Users\Ralf\documents\visual studio 2013\Projects\AchievementCreator\Achieveme
 C:\Users\Ralf\documents\visual studio 2013\Projects\AchievementCreator\AchievementCreator\obj\Debug\AchievementCreator.csproj.GenerateResource.Cache
 C:\Users\Ralf\documents\visual studio 2013\Projects\AchievementCreator\AchievementCreator\obj\Debug\AchievementCreator.exe
 C:\Users\Ralf\documents\visual studio 2013\Projects\AchievementCreator\AchievementCreator\obj\Debug\AchievementCreator.pdb
+C:\Users\Ralf Keller\Documents\Visual Studio 2015\Projects\AchievementCreator\AchievementCreator\AchievementCreator\bin\Debug\AchievementCreator.exe.config
+C:\Users\Ralf Keller\Documents\Visual Studio 2015\Projects\AchievementCreator\AchievementCreator\AchievementCreator\obj\Debug\AchievementCreator.exe
+C:\Users\Ralf Keller\Documents\Visual Studio 2015\Projects\AchievementCreator\AchievementCreator\AchievementCreator\obj\Debug\AchievementCreator.pdb
+C:\Users\Ralf Keller\Documents\Visual Studio 2015\Projects\AchievementCreator\AchievementCreator\AchievementCreator\bin\Debug\AchievementCreator.exe
+C:\Users\Ralf Keller\Documents\Visual Studio 2015\Projects\AchievementCreator\AchievementCreator\AchievementCreator\bin\Debug\AchievementCreator.pdb
+C:\Users\Ralf Keller\Documents\Visual Studio 2015\Projects\AchievementCreator\AchievementCreator\AchievementCreator\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ralf Keller\Documents\Visual Studio 2015\Projects\AchievementCreator\AchievementCreator\AchievementCreator\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ralf Keller\Documents\Visual Studio 2015\Projects\AchievementCreator\AchievementCreator\AchievementCreator\obj\Debug\AchievementCreator.csprojResolveAssemblyReference.cache
+C:\Users\Ralf Keller\Documents\Visual Studio 2015\Projects\AchievementCreator\AchievementCreator\AchievementCreator\obj\Debug\AchievementCreator.Form1.resources
+C:\Users\Ralf Keller\Documents\Visual Studio 2015\Projects\AchievementCreator\AchievementCreator\AchievementCreator\obj\Debug\AchievementCreator.Properties.Resources.resources
+C:\Users\Ralf Keller\Documents\Visual Studio 2015\Projects\AchievementCreator\AchievementCreator\AchievementCreator\obj\Debug\AchievementCreator.csproj.GenerateResource.Cache

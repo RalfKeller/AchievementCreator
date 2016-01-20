@@ -80,13 +80,18 @@ namespace AchievementCreator
             currentAchievement.setBeschreibng(beschreibungTextbox.Text, currentLevel);
             currentAchievement.setTitle(titelTextbox.Text, currentLevel);
 
+            saveToFile();
+        }
+
+        private void saveToFile()
+        {
             string outputString = JsonConvert.SerializeObject(allAchievements);
             File.WriteAllText("achievements.txt", outputString);
         }
 
         private void newLevelButton_Click(object sender, EventArgs e)
         {
-            if(currentAchievementIndex == -1)
+            if (currentAchievementIndex == -1)
             {
                 MessageBox.Show("Du musst zuerst ein Achievement auswählen bevor du ein neues Level erstellen kannst.", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -125,9 +130,9 @@ namespace AchievementCreator
                 levelIndex = -1;
             }
 
-            if(e.Button == System.Windows.Forms.MouseButtons.Left)
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
-                loadAchievement(achievementIndex, levelIndex == -1?0:levelIndex);
+                loadAchievement(achievementIndex, levelIndex == -1 ? 0 : levelIndex);
                 currentAchievementIndex = achievementIndex;
                 currentLevel = levelIndex;
             }
@@ -150,30 +155,57 @@ namespace AchievementCreator
             currentAchievement = a;
         }
 
+        private void clearViews()
+        {
+            titelTextbox.Text = "";
+            beschreibungTextbox.Text = "";
+            anzahlUpDown.Value = 0;
+            methodenIDBox.Text = "";
+        }
+
         private void löschenToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            if (e.ClickedItem.Text == "Löschen")
-            {
-                if (contextAchievementIndex != -1)
-                {
-                    if (contextLevel == -1)
-                    {
-                        allAchievements.RemoveAt(contextAchievementIndex);
-                        treeView1.Nodes.RemoveAt(contextAchievementIndex);
-                        currentAchievementIndex = -1;
-                    }
 
-                    else if(currentLevel < allAchievements[contextAchievementIndex].getLevels())
-                    {
-                        MessageBox
-                    }
+        }
+
+        private void löschenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (contextAchievementIndex != -1)
+            {
+                if (contextLevel == -1)
+                {
+                    allAchievements.RemoveAt(contextAchievementIndex);
+                    treeView1.Nodes.RemoveAt(contextAchievementIndex);
+                    currentAchievementIndex = -1;
+                    treeView1.SelectedNode = null;
+                    currentAchievement = null;
+                    clearViews();
+                    saveToFile();
                 }
 
-                else
+                else if (contextLevel < allAchievements[contextAchievementIndex].getLevels() - 1)
                 {
-                    MessageBox.Show("Es wurde nichts richtiges Ausgewählt!");
+                    MessageBox.Show("Du kannst nicht ein Level löschen, wenn es nicht das letzte ist.", "Feher", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                else if (contextLevel == allAchievements[contextAchievementIndex].getLevels() - 1)
+                {
+                    allAchievements[contextAchievementIndex].deleteLastLevel();
+                    treeView1.Nodes[contextAchievementIndex].Nodes.RemoveAt(contextLevel);
+                    currentLevel = -1;
+                    currentAchievementIndex = -1;
+                    treeView1.SelectedNode = null;
+                    currentAchievement = null;
+                    clearViews();
+                    saveToFile();
                 }
             }
+
+            else
+            {
+                MessageBox.Show("Es wurde nichts richtiges Ausgewählt!");
+            }
+
         }
     }
 }

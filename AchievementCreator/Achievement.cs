@@ -35,6 +35,18 @@ namespace AchievementCreator
         public void setLevels(int levels)
         {
             this.levels = levels;
+            while (this.titel.Count < getLevels())
+            {
+                this.titel.Add("");
+            }
+            while (this.beschreibung.Count < getLevels())
+            {
+                this.beschreibung.Add("");
+            }
+            while (this.maximaleAnzahl.Count < getLevels())
+            {
+                this.maximaleAnzahl.Add(0);
+            }
         }
 
         public string getTitle(int level)
@@ -67,7 +79,7 @@ namespace AchievementCreator
             this.titel[level] = titel;
 
             if (level > levels)
-                levels = level;
+                setLevels(level);
         }
 
         public void setBeschreibng(string beschreibung, int level)
@@ -79,7 +91,7 @@ namespace AchievementCreator
             this.beschreibung[level] = beschreibung;
 
             if (level > levels)
-                levels = level;
+                setLevels(level);
         }
 
         public void setAnzahl(int anzahl, int level)
@@ -91,7 +103,12 @@ namespace AchievementCreator
             this.maximaleAnzahl[level] = anzahl;
 
             if (level > levels)
-                levels = level;
+                setLevels(level);
+        }
+
+        public void deleteLastLevel()
+        {
+            
         }
 
     }
